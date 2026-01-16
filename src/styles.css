@@ -1,0 +1,296 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+
+@font-face {
+  font-family: 'displayregular';
+  src: url('./fonts/webfonts/dmserifdisplay-regular-webfont.woff2') format('woff2'),
+       url('./fonts/webfonts/dmserifdisplay-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'robotoregular';
+  src: url('./fonts/webfonts/roboto-variablefont_wdthwght-webfont.woff2') format('woff2'),
+       url('./fonts/webfonts/roboto-variablefont_wdthwght-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'slabregular';
+    src: url('./fonts/webfont2/zillaslab-regular-webfont.woff2') format('woff2'),
+         url('./fonts/webfont2/zillaslab-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+*:not(dialog) {
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+#root, #__next {
+  isolation: isolate;
+}
+
+#root{
+    display: grid;
+    grid-template-rows: 1.7fr 15fr;
+    grid-template-columns: 1.5fr 8fr;
+}
+
+.sidebar{
+  font-family: 'robotoregular',sans-serif;
+    background-color: #eed5b9;
+    grid-area: 1/1/3/2;
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+}
+.content{
+    background-color: rgb(145, 225, 243);
+    grid-area: 2/2/-1/-1;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 25px;
+    align-items: center;
+}
+
+.header{
+    font-family: 'displayregular',sans-serif;
+    font-size: 0.8rem;
+    grid-area: 1/2/2/-1;
+    background-color: rgb(115, 143, 196);
+    color: white;
+}
+
+.todo-icon{
+  padding: 5px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: left;
+  border-bottom: 1px solid gray;
+}
+
+.project-div{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid gray;
+}
+
+.projects{
+  padding: 10px;
+}
+
+.btn{
+  color: white;
+  background-color: black;
+  font-size: .7rem;
+  border-radius: 8px;
+  border: 1px solid rgb(146, 153, 136);
+  font-family: 'robotoregular',sans-serif;
+}
+.default-btn{
+  background-color: rgb(29, 145, 106);
+  color:blanchedalmond;
+  font-size: .9rem;
+  border-radius: 12px;
+  width: 150px;
+  border: 1px solid chartreuse;
+}
+
+.projects{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.div-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: transparent;
+  height: 100%;
+}
+
+.heading{
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+#project-form{
+  position: absolute;
+  font-family: 'robotoregular',sans-serif;
+  font-size: .8rem;
+  left: 40vw;
+  top: 40vh;
+  z-index: 1;
+  background-color:transparent;
+}
+
+#projectName{
+  border-radius: 8px;
+  border: 1px solid grey;
+}
+
+.submit-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+
+#project-field{
+  background-color: bisque;
+  border-radius: 8px;
+  border: 1px solid grey;
+  padding: 10px;
+}
+
+#project-form.disable{
+  display: none;
+}
+
+/* styling main form */
+.content-form{
+  font-family: 'robotoregular','Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: .8rem;
+  position: absolute;
+  left: 40vw;
+  top: 30vh;
+}
+
+#formNameInput{
+  font-family: 'robotoregular',sans-serif;
+  height: 20px;
+  border: 1px solid grey;
+  border-radius: 8px;
+}
+
+#description{
+  height: 30px;
+  font-family: 'robotoregular',sans-serif;
+  border: 1px solid grey;
+  border-radius: 8px;
+}
+
+#dateTime{
+  height: 25px;
+  border: 1px solid grey;
+  border-radius: 8px;
+}
+.content-form-fieldset{
+  background-color: #e0fbf2;
+  padding: 15px;
+  border: 1px solid grey;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: left;
+}
+
+.content-form-name-div, .content-form-description, .content-form-time{
+  display: flex;
+  flex-direction: column;
+}
+
+.priorityFieldset{
+  background-color: white;
+  border: 1px solid grey;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 10px;
+}
+
+.content-form-submit{
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.main-btn{
+  font-size: .9rem;
+  padding: 3px;
+  border-radius: 18px;
+  width: 70px;
+  vertical-align: center;
+}
+
+.task-card{
+  font-family: 'slabregular';
+  background-color: white;
+  background-color: rgb(235, 209, 61);
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  border-radius: 16px;
+  padding: 12px;
+  width: 60%;
+}
+
+.taskDescDiv{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 70%;
+}
+
+.removeTaskButton, .removeProjectButton{
+  font-weight: normal;
+  background-color: red;
+  color: white;
+  border: 1px solid red;
+  border-radius: 18px;
+  font-size: .9rem;
+}
+
+.task-card.highp { border-left: 10px solid #ff4d4d; }
+.task-card.modp { border-left: 10px solid #927d26; }
+.task-card.lowp { border-left: 10px solid #2ecc71; }
